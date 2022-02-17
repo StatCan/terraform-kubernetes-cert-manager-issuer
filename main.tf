@@ -26,6 +26,7 @@ solvers:
   - http01:
       ingress:
         class: "${var.acme_http01_ingress_class}"
+        serviceType: "${var.acme_http01_ingress_service_type}"
     selector:
       matchLabels:
         use-http-solver: 'true'
