@@ -16,6 +16,7 @@ resource "helm_release" "issuer" {
   values = [<<EOF
 solvers:
   - dns01:
+      cnameStrategy: Follow
       azureDNS:
         subscriptionID: "${var.acme_dns01_azuredns_subscription_id}"
         resourceGroupName: "${var.acme_dns01_azuredns_resource_group_name}"
